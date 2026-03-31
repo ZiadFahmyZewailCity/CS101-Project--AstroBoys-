@@ -1,7 +1,9 @@
 import deltaD_calc, deltaV_calc, Linspace_Function, Dis_calc, Mass_convert_calc, F_calc,  Input_object_data, \
-    newton_check,collision_check,data_sav_read
-#data_sav,pos_calc, matplotlib.pyplot as plt, numpy as np,matplotlib.animation as animation,
-#from matplotlib.animation import FuncAnimation
+    newton_check,collision_check,data_sav_read,data_T
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.animation as animation
+from matplotlib.animation import FuncAnimation
 
 
 dT = 10000 # Size of dt approximation
@@ -68,7 +70,7 @@ for int_numdt in range(len(L1xn_int_dT)):
     Lnxn_int_objcords = Lnxn_int_dD
 
 
-"""if bool_coll == False:
+if bool_coll == False:
     dict_data = data_T.data_T(L1xn_int_dT,Lnxn_int_objCordsA,Lnxn_int_objectVelA,Lnxn_int_FA)
 
 str_datainput = input("Would you like to see the data for an particular instant in time? (Y/N): ")
@@ -90,7 +92,7 @@ while bool_startdata:
         int_keydic = input("unrecognized instant in time please enter again")
     else:
         print(dict_data[int_keydic])
-        break"""""
+        break
 
 
 
@@ -98,7 +100,7 @@ while bool_startdata:
 
 
 ## Convert the lists to NumPy arrays for easier plotting
-'''Lnxn_int_objCordsA = np.array(Lnxn_int_objCordsA)
+Lnxn_int_objCordsA = np.array(Lnxn_int_objCordsA)
 
 # Create a 1x2 subplot grid
 fig, axs = plt.subplots(1, 2, figsize=(12, 5))
@@ -133,11 +135,8 @@ if bool_coll == False:
 # Adjust layout to prevent clipping of labels
 plt.tight_layout()
 
-plt.show()'''
-
-
-
-""""# Assuming Lnxn_int_objCordsA is a list of coordinates for each object over time
+plt.show()
+# Assuming Lnxn_int_objCordsA is a list of coordinates for each object over time
 # It should be a list of lists, where each inner list represents the coordinates of objects at a specific time step.
 
 # Convert the list to a numpy array for easier manipulation
@@ -167,9 +166,9 @@ def update(frame):
 # Create animation
 ani = animation.FuncAnimation(fig, update, frames=np.arange(0, 10), interval=1, blit=False) #len(L1xn_int_dT)
 
-plt.show()"""
+plt.show()
 
-"""figure, ax = plt.subplots()
+figure, ax = plt.subplots()
 
 # Setting limits for x and y axis
 ax.set_xlim(0, 100e100)
@@ -192,7 +191,7 @@ animation = FuncAnimation(figure,
                           func=animation_function,
                           frames=np.arange(0, 10, 0.1),
                           interval=10)
-plt.show()"""
+plt.show()
 
 
 
